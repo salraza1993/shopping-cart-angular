@@ -1,0 +1,15 @@
+<header class="bg-dark text-white p-4">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center">
+      <a routerLink="/" class="text-white" style="text-decoration: none;">
+        <h2>Header</h2>
+      </a>
+      <nav class="d-flex align-items-center gap-4">
+        <a routerLink="/" class="text-white text-decoration-none">Products</a>
+        <a routerLink="/cart" class="btn btn-info py-1 d-flex gap-2 fw-bold">
+          Cart <span>({{ total_cart_items.length }})</span>
+        </a>
+      </nav>
+    </div>
+  </div>
+</header>

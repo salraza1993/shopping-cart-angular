@@ -1,0 +1,20 @@
+<section class="card-listing">
+  <div class="container px-0">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 g-4">
+      <ng-container *ngFor="let card of cards | slice:0:12; let i = index">
+        <app-card [card]="card"></app-card>
+      </ng-container>
+       <ng-container *ngIf="error">
+          <div
+            style="background-color: rgba(var(--bs-danger-rgb), 0.15);"
+            class="d-flex flex-column align-items-center gap-4 border-danger p-4 py-5 text-center rounded">
+            <h4>
+              <i class="fs-1 text-danger  mb-3 fa-solid fa-triangle-exclamation"></i>
+              <br />
+              Products not found!
+            </h4>
+          </div>
+        </ng-container>
+    </div>
+  </div>
+</section>

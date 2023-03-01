@@ -1,0 +1,22 @@
+<div class="cart-item">
+  <div class="cart-item__image">
+    <img [src]="cart.images[0]" [alt]="cart.title" />
+  </div>
+  <div class="cart-item__content">
+    <div class="cart-item__content__info">
+      <h5 class="fw-bold">{{cart.title}}</h5>
+      <p class="m-0">Ref: xyz_{{cart.id}}</p>
+    </div>
+    <div class="d-flex gap-4 flex-row-reverse">
+      <button class="cart-item__content__delete btn btn-danger btn-sm" (click)="removeCartItem(cart)">Delete</button>
+      <div class="cart-item__content__price">
+        {{cart.totalPrice | currency }} / {{cart.quantity}}pc
+      </div>
+      <div class="cart-item__content__quantity">
+        <span class="__minus" (click)="decreaseQuantity(cart)">&minus;</span>
+        <span class="__total-qnty">{{ cart.quantity }}</span>
+        <span class="__plus" (click)="increaseQuantity(cart)">&plus;</span>
+      </div>
+    </div>
+  </div>
+</div>

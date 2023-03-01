@@ -1,0 +1,32 @@
+<section class="bg-light py-4 pb-5">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-12 d-flex flex-column gap-3">
+        <h4 class="mb-1 fw-bold">Cart ({{ total_cart_items.length }})</h4>
+        <ng-container *ngFor="let cart of cart_products">
+          <app-cart-item [cart]="cart"></app-cart-item>
+        </ng-container>
+        <ng-container *ngIf="total_cart_items === 0">
+          <div
+            style="background-color: rgba(var(--bs-danger-rgb), 0.15);"
+            class="d-flex flex-column align-items-center gap-4 border-danger p-4 py-5 text-center rounded">
+            <h4>
+              <i class="fs-1 text-danger  mb-3 fa-solid fa-triangle-exclamation"></i>
+              <br />
+              There are not products in your cart.
+            </h4>
+            <a routerLink="/" class="btn btn-warning py-1 shadow d-inline-flex align-items-center gap-3 btn-lg fw-bold">
+              Shop Now
+              <i class="fa-solid fa-cart-shopping"></i>
+            </a>
+          </div>
+        </ng-container>
+      </div>
+      <ng-container *ngIf="total_cart_items !== 0">
+        <div class="col-12 sticky-bottom">
+          <app-cart-total></app-cart-total>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</section>
